@@ -1,0 +1,11 @@
+﻿@model IEnumerable<WebApplication12.Models.Test>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hello</h2>
+<h4>tests to solve</h4>
+@foreach (var test in Model)
+{
+    <p>@test.name</p>
+}

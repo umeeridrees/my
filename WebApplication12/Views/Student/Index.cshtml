@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication12.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Students</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.rollno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher.username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.rollno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher.username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.s_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.s_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.s_id })
+        </td>
+    </tr>
+}
+
+</table>
